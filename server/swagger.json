@@ -1,0 +1,242 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Numerical",
+      "version": "1.0.0",
+      "description": "API "
+    },
+    "servers": [
+      {
+        "url": "http://localhost:4000"
+      }
+    ],
+    "paths": {
+        "/api/equations": {
+            "get": {
+              "description": "",
+              "tags": ["Get Equations"],
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "404": {
+                  "description": "Not Found"
+                }
+              }
+            }
+          },
+      "/api/Add-equations": {
+        "post": {
+          "summary": "Add a new equation for root-finding",
+          "tags": ["Add Equations"],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "methodType": {
+                      "type": "string",
+                      "description": "MethodType",
+                      "example": "Bisection"
+                    },
+                    "func": {
+                      "type": "string",
+                      "description": "equation",
+                      "example": "x^2 - 4"
+                    },
+                    "xL": {
+                      "type": "number",
+                      "description": "XL",
+                      "example": 1
+                    },
+                    "xR": {
+                      "type": "number",
+                      "description": "XR",
+                      "example": 2
+                    },
+                    "table": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "xl": { "type": "number" },
+                          "xr": { "type": "number" }
+                        }
+                      },
+                      "description": "Iteration table",
+                      "example": [{"iteration":2 ,"xl": 1, "xr": 2 ,"error":20}]
+                    },
+                    "epsilon": {
+                      "type": "number",
+                      "description": "epsilon",
+                      "example": 0.01
+                    },
+                    "answer": {
+                      "type": "number",
+                      "description": "Answer",
+                      "example": 2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Equation added successfully"
+            },
+            "500": {
+              "description": "Failed to save equation"
+            }
+          }
+        }
+      },
+
+      "/api/Gauss": {
+        "get": {
+          "description": "",
+          "tags": ["Get Gauss"],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      } ,
+      "/api/Add-Gauss": {
+        "post": {
+          "summary": "Add a new equation for Gauss",
+          "tags": ["Add Gauss"],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "methodType": {
+                        "type": "string",
+                        "description": "MethodType",
+                        "example": "Gauss"
+                      },
+                    "equation": {
+                        "type": "array",
+                        "description": "Array ",
+                        "example": [[2, 1, -1, 8], [ -3, -1, 2, -11], [ -2, 1, 2, -3]]
+                      },
+                      "size": {
+                        "type": "number",
+                        "description": "Size ",
+                        "example": 3
+                      },
+                      "answer": {
+                        "type": "array",
+                        "description": "Array of solutions",
+                        "example": [2, 3, -1]
+                      },
+                      "err": {
+                        "type": "number",
+                        "description": "error",
+                        "example": 0.01
+                      },
+                      "table": {
+                        "type": "array",
+                        "description": "table for seidal or jacob",
+                        "example": [{"x1":50,"x2":100,"x3":200}]
+                      }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Equation added successfully"
+            },
+            "500": {
+              "description": "Failed to save equation"
+            }
+          }
+        }
+      },
+      "/api/Interpolation": {
+        "get": {
+          "description": "",
+          "tags": ["Get Intepolation"],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/api/Add-Interpolation": {
+        "post": {
+          "summary": "Add Interpolation",
+          "tags": ["Add Interpolation"],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "methodType": {
+                        "type": "string",
+                        "description": "Methodtype ",
+                        "example": "Lagrange"
+                      },
+                      "points": {
+                        "type": "array",
+                        "description": "Data points for interpolation",
+                        "example": [[1, 2], [2, 3], [3, 5]]
+                      },
+                      "xTarget": {
+                        "type": "number",
+                        "description": "Target x ",
+                        "example": 2.5
+                      },
+                      "answer": {
+                        "type": "number",
+                        "description": "answer",
+                        "example": 2.75
+                      },
+                      "n": {
+                        "type": "number",
+                        "description": "Number of data points",
+                        "example": 3
+                      },
+                      "chart": {
+                        "type": "array",
+                        "description": "Chart data ",
+                        "example": [[1, 2], [2, 3], [3, 5], [2.5, 2.75]]
+                      }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Equation added successfully"
+            },
+            "500": {
+              "description": "Failed to save equation"
+            }
+          }
+        }
+      }
+
+   
+      
+    }
+  }
+  

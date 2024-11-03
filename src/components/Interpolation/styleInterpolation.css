@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.form-container {
+    width: 600px;
+    padding: 5px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 50px;
+
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.option-form,
+input,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.calculate {
+    margin-top: 10px;
+    color: #fff;
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    border-color: #007bff;
+}
+
+.calculate:hover {
+    background-color: #0056b3;
+    /* Darker shade for hover */
+    border-color: #0056b3;
+    /* Darker shade for hover */
+    color: #e6e6e6;
+    /* Slightly lighter text color */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.calculate.active {
+    border-color: red;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.results-container {
+    display: flex;
+    width: 1200px;
+    /* Adjust as needed */
+    height: 500px;
+    /* Controls the height of both the chart and table container */
+    margin: 50px;
+}
+
+.table-and-chart {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    /* Space between table and chart */
+}
+
+.table-and-chart-graphical {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    /* Space between table and chart */
+}
+
+.table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+
+.table {
+    width: 50%;
+    /* Adjust as needed */
+    max-height: 300px;
+    /* Limit the visible height to show only about 9 rows */
+    overflow-y: auto;
+    /* Enable vertical scroll when content overflows */
+    background-color: white;
+    border-collapse: collapse;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody {
+    display: block;
+    max-height: 450px;
+    /* Ensure the tbody scrolls */
+    overflow-y: auto;
+    width: 100%;
+}
+
+.table thead,
+.table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    /* Make sure the rows have a fixed layout */
+}
+
+.chart-container {
+    width: 50%;
+    /* Adjust as needed */
+    height: 100%;
+    /* Chart height matches the container */
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.chart-container-graphical {
+    width: 100%;
+    /* Adjust as needed */
+    height: 100%;
+    /* Chart height matches the container */
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.chart-container canvas {
+    height: 100%;
+    /* Matches chart height to the container */
+}
+
+@media screen and (max-width: 1024px) {
+    .table-and-chart {
+        flex-direction: column;
+    }
+
+    .table,
+    .chart-container {
+        width: 100%;
+        height: auto;
+        /* Adjusts height for smaller screens */
+    }
+}
+
+.answer {
+    text-align: center;
+}
+
+.matrix-row {
+    display: flex;
+    /* Align items in a row */
+    justify-content: center;
+    /* Center the inputs horizontally */
+    margin-bottom: 10px;
+    /* Space between rows */
+
+}
+
+.matrix-input {
+    width: 100px;
+    /* Fixed width for inputs to create a consistent look */
+    padding: 20px;
+    /* Inner padding for better touch targets */
+    text-align: center;
+    /* Center text within the input */
+    border: 1px solid #ccc;
+    /* Light border */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Increase font size */
+    margin-right: 20px;
+}
+
+.matrix-input:focus {
+    border-color: #007bff;
+    /* Highlight border on focus */
+    outline: none;
+    /* Remove default outline */
+}
+
+.matrix-container {
+    margin-top: 50px;
+}
+
+.result-container {
+    width: 400px;
+    padding: 5px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 50px;
+    text-align: center;
+}

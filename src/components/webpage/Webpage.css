@@ -1,0 +1,68 @@
+/* Webpage.css */
+
+.OutHeader {
+    background-color: #01ffff; /* Dark background for the header */
+    padding: 15px 20px; /* Padding around the header */
+  }
+  
+  .InHeader {
+    max-width: 1200px; /* Max width of the header content */
+    margin: auto; /* Center the header */
+  }
+  
+  .navBar {
+    display: flex; /* Use flexbox for the navigation bar */
+    justify-content: space-between; /* Space out the dropdowns */
+    align-items: center; /* Center align items vertically */
+    padding-right: 200px;
+  }
+  
+  .dropdown {
+    position: relative; /* Position relative for dropdown */
+    margin-right: 20px; /* Space between dropdowns */
+  }
+  
+  .dropdown > a {
+    color: #030303; /* White text for dropdown headers */
+    text-decoration: none; /* No underline */
+    padding: 10px; /* Padding around the text */
+    font-weight: bold; /* Bold font for visibility */
+    transition: color 0.3s; /* Transition effect for hover */
+  }
+  
+  .dropdown > a:hover {
+    color: #ffc107; /* Change color on hover */
+  }
+  
+  .dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute; /* Position absolute to place it below the dropdown */
+    background-color: #ffffff; /* White background for dropdown */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    z-index: 1; /* Ensure dropdown is on top */
+    min-width: 160px; /* Minimum width of dropdown */
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content on hover */
+  }
+  
+  .dropdown-content a {
+    color: #000000; /* Dark text for links in dropdown */
+    padding: 12px 16px; /* Padding for dropdown links */
+    text-decoration: none; /* No underline */
+    display: block; /* Block display for full-width click */
+    transition: background-color 0.3s; /* Transition for background on hover */
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+  }
+  
+  li {
+    list-style-type: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  
